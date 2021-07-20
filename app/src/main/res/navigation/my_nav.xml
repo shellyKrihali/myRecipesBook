@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/recipesFragment">
+
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.myrecipes.ui.fragments.recipes.RecipesFragment"
+        android:label="Recipes">
+        <action
+            android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
+            app:destination="@id/recipesBottomSheet" />
+        <argument
+            android:name="backFromBottomSheet"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteRecipesFragment"
+        android:name="com.example.myrecipes.ui.fragments.favorites.FavoriteRecipesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite_recipes" >
+        <action
+            android:id="@+id/action_favoriteRecipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadRecipeFragment"
+        android:name="com.example.myrecipes.ui.fragments.uploadrecipe.UploadRecipeFragment"
+        android:label="Upload Recipe"
+        tools:layout="@layout/fragment_upload_recipes" >
+        <action
+            android:id="@+id/action_uploadRecipeFragment_to_createRecipesBottomSheet"
+            app:destination="@id/createRecipesBottomSheet" />
+        <argument
+            android:name="backFromUploadBottomSheet"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/createRecipesBottomSheet"
+        android:name="com.example.myrecipes.ui.fragments.uploadrecipe.bottomsheet.CreateRecipeBottomSheet"
+        android:label="Make Your Own Recipe"
+        tools:layout="@layout/fragment_create_recipe" >
+        <action
+            android:id="@+id/action_createRecipesBottomSheet_to_uploadRecipeFragment"
+            app:destination="@id/uploadRecipeFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/recipesBottomSheet"
+        android:name="com.example.myrecipes.ui.fragments.recipes.bottomsheet.RecipesBottomSheet"
+        android:label="recipes_bottom_sheet"
+        tools:layout="@layout/recipes_bottom_sheet" >
+        <action
+            android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </dialog>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.example.myrecipes.ui.DetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.example.myrecipes.models.Result" />
+    </activity>
+    <fragment
+        android:id="@+id/uploadImageRecipeFragment2"
+        android:name="com.example.myrecipes.ui.fragments.uploadimagerecipe.UploadImageRecipeFragment"
+        android:label="Upload Recipe Image"
+        tools:layout="@layout/fragment_upload_image_recipe"/>
+</navigation>

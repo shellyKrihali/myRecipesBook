@@ -1,0 +1,45 @@
+package com.example.myrecipes.util
+
+class Constants {
+
+    // If you need to write a function that can be called without having a
+    // class instance but needs access to the internals of a class
+    // you can write it as a member of a companion object declaration inside that class
+    companion object {
+
+        const val BASE_URL = "https://api.spoonacular.com"
+        // for ingredients image
+        const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
+        const val API_KEY = "04cfd611868a4afb9cceb974bb11ade4"
+        const val RECIPE_RESULT_KEY = "recipeBundle"
+
+        // API Query Keys
+        const val QUERY_SEARCH = "query"
+        const val QUERY_NUMBER = "number"
+        const val QUERY_API_KEY = "apiKey"
+        const val QUERY_TYPE = "type"
+        const val QUERY_ADD_RECIPE_INFORMATION = "addRecipeInformation"
+        const val QUERY_FILL_INGREDIENTS = "fillIngredients"
+
+        // ROOM Database
+        const val DATABASE_NAME = "recipes_database"
+        const val RECIPES_TABLE = "recipes_table"
+        const val FAVORITE_RECIPES_TABLE = "favorite_recipes_table"
+
+
+        // Bottom Sheet and Preferences
+        const val DEFAULT_RECIPES_NUMBER = "30"
+        const val DEFAULT_MEAL_TYPE = "main course"
+        const val DEFAULT_MEAL_CATEGORY = "Main course"
+        const val DEFAULT_DIET_TYPE = "gluten free"
+
+        const val PREFERENCES_NAME = "myrecipes_preferences"
+        const val PREFERENCES_MEAL_TYPE = "mealType"
+        const val PREFERENCES_MEAL_TYPE_ID = "mealTypeId"
+
+        const val FIREBASE_RECIPE ="recipesapp-5b4ac-default-rtdb"
+
+
+    }
+
+}
